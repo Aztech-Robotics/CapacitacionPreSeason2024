@@ -11,4 +11,8 @@ public final class Constants {
     public static final double kMaxVel_neo = 0;
     public static final double kMaxAccel_neo = 0;
   }
+
+  public static final class FalconMotorConstants {
+    public static final int id_falcon = 0;
+  }
 }

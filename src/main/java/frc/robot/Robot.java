@@ -3,13 +3,22 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.NeoMotorWithPosition;
+import frc.robot.commands.NeoWithJoystick;
+import frc.robot.subsystems.NeoMotor;
 
 public class Robot extends TimedRobot {
-  private Command m_autonomousCommand;
+  private Command m_autonomousCommand; 
+  private final NeoMotor neoMotorSubsystem = NeoMotor.getInstance(); 
+  private final NeoWithJoystick neoMotorCommJoystick = new NeoWithJoystick(); 
+  private final NeoMotorWithPosition neoMotorWithPosition = new NeoMotorWithPosition(-10); 
 
   //Se ejecuta una vez cuando el robot se inicializa al momento de prender 
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+    neoMotorSubsystem.setDefaultCommand(neoMotorCommJoystick); 
+    Controllers.getTriggerButtonA_0().onTrue(neoMotorWithPosition); 
+  }
 
   //Se ejecuta periodicamente durante el tiempo que el robot esta prendido
   @Override
@@ -49,7 +58,9 @@ public class Robot extends TimedRobot {
 
   //Se ejecuta mientras el modo teleoperado esta activado
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+
+  }
 
   @Override
   public void testInit() {
