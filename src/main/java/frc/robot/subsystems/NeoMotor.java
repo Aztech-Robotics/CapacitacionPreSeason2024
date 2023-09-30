@@ -61,7 +61,7 @@ public class NeoMotor extends SubsystemBase {
     pidController.setFeedbackDevice(alternateEncoder);
     pidController.setFeedbackDevice(integratedEncoder);
     //Configura el valor mínimo y maximo de salida para poder utilizar si el motor utiliza Closed Loop
-    pidController.setOutputRange(-1, 1, 0);
+    pidController.setOutputRange(-1, 1, 0); 
     //Configura el valor de KP para el controlador
     pidController.setP(Constants.NeoMotorConstants.kp_neo, 0); 
     //Configura el valor de KI para el controlador
@@ -80,7 +80,7 @@ public class NeoMotor extends SubsystemBase {
      * En el caso de encoders absolutos hay una discontinuidad, no importan sus unidades: de 360 regresa a 0,
      * a veces tambien de maneja con signo de -180 a 0 y de 0 a 180, la discontinuidad es de 180 a -180 o viceversa. 
      * Vamos a poner un ejemplo con el rango de 0 a 360. Si estoy en 350 grados y quiero llegar a 0. El calculo de mi error seria:
-     * error = 0(setpoint) - 350(current position) = -350 grados de error.
+     * error = 0(setpoint) - 350(current position) = -350 grados de error. 
      * Es un error negativo, sean cuales sean los valores k del controlador PID nos va a dar una salida negativa, por lo que para 
      * llegar a 0 el motor va a recorrer 350 grados de regreso y llegar, pero realmente no es su ruta mas corta, ya que esta seria
      * avanzar 10 grados y llegar a 0. Eso es lo que hace el PIDWrapping en el caso de los Neo, considera esta discontinuidad a la
