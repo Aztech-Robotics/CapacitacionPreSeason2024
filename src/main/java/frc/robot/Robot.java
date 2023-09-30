@@ -8,6 +8,7 @@ import frc.robot.commands.NeoWithJoystick;
 import frc.robot.subsystems.NeoMotor;
 
 public class Robot extends TimedRobot {
+  //Otro cambio ejemplo 
   private Command m_autonomousCommand; 
   private final NeoMotor neoMotorSubsystem = NeoMotor.getInstance(); 
   private final NeoWithJoystick neoMotorCommJoystick = new NeoWithJoystick(); 
@@ -23,7 +24,7 @@ public class Robot extends TimedRobot {
   //Se ejecuta periodicamente durante el tiempo que el robot esta prendido
   @Override
   public void robotPeriodic() {
-    CommandScheduler.getInstance().run();
+    CommandScheduler.getInstance().run(); 
   }
 
   //Se ejecuta una vez cuando el robot se deshabilita
