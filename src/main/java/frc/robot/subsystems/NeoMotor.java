@@ -146,7 +146,8 @@ public class NeoMotor extends SubsystemBase {
   }
 
   /*
-   * Para darle una salida al motor de acuerdo al modo indicado. Los que mas utilizamos son:
+   * Para darle una salida al motor de acuerdo al modo indicado. 
+   * Los que mas utilizamos son:
    * DutyCycle: De -1 a 1
    * Position: Posicion en las unidades que hayas configurado, las nativas son revoluciones. 
    * Velocity: Posicion en las unidades que hayas configurado, las nativas son RPM. 

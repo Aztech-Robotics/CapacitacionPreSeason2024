@@ -3,10 +3,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.NeoMotor;
 
-public class NeoMotorWithPosition extends CommandBase {
+public class NeoWithPosition extends CommandBase {
   private final NeoMotor mNeoMotor = NeoMotor.getInstance(); 
   private final double desiredPosition; 
-  public NeoMotorWithPosition (double desiredPosition) { 
+  public NeoWithPosition (double desiredPosition) { 
     this.desiredPosition = desiredPosition; 
     addRequirements(mNeoMotor);
   }
